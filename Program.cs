@@ -26,7 +26,7 @@ namespace Bookstore
 
         private static void RunMigrations(IWebHost webHost)
         {
-            using(var scope = webHost.Services.CreateScope())
+            using(var  scope = webHost.Services.CreateScope())
             {
                 var db = scope.ServiceProvider.GetRequiredService<BookstoreDbContext>();
                 db.Database.Migrate();
